@@ -1,0 +1,700 @@
+/* CSS to add fonts */
+@font-face {
+  font-family: mainFont;
+  src: url(fonts/TT\ Rounds\ Neue\ Trial\ Compressed\ Medium.ttf)
+}
+
+@font-face {
+  font-family: bubbleSans;
+  src: url(fonts/CHARLEY.otf);
+  
+}
+
+body{
+  margin: 0;
+  overflow-x: hidden;
+  background-color: black;
+
+}
+
+.hamburger {
+  position: fixed;  /* Positioning the hamburger button */
+  left: 30px;  /* Distance from the left side of the container */
+  top: 50%;  /* Distance from the top of the container */
+  display: flex;  /* Display as a flex container */
+  height: 18px;  /* Height of the hamburger button */
+  width: 24px;  /* Width of the hamburger button */
+  flex-direction: column;  /* Vertical stacking of icon lines */
+  justify-content: space-between;  /* Spacing between icon lines */
+  cursor: pointer;  /* Change cursor to pointer on hover */
+  user-select: none;  /* Disable text selection */
+  z-index: 2;  /* Stack order of the element */
+}
+
+.hamburger__icon {
+  display: inline-block;  /* Display as an inline-block element */
+  height: 2px;  /* Height of the icon lines */
+  width: 24px;  /* Width of the icon lines */
+  background: #4741F2;  /* Background color of the icon lines */
+  border-radius: 2px;  /* Rounded border corners */
+  
+}
+
+.sidebar {
+  height: 100vh;  /* Full height of the viewport */
+  width: 50vw;  /* Width of the sidebar */
+  background: whitesmoke;  /* Background color of the sidebar */
+  position: fixed;  /* Absolute positioning */
+  top: 0;  /* Distance from the top of the container */
+  left: 0;  /* Distance from the left side of the container */
+  padding: 0 60px;  /* Padding inside the sidebar */
+  display: flex;  /* Display as a flex container */
+  flex-direction: column;  /* Vertical stacking of sidebar content */
+  transform: translatex(-100%);  /* Initial position outside the viewport */
+  transition: transform 0.4s ease-in-out;  /* Transition effect for animation */
+  z-index: 2;
+}
+
+.sidebar__close {
+  position: fixed;  /* Absolute positioning */
+  top: 50%;  /* Distance from the top of the container */
+  right: -30px;  /* Distance from the right side of the container */
+  background: #fff;  /* Background color of the close button */
+  height: 60px;  /* Height of the close button */
+  width: 60px;  /* Width of the close button */
+  border-radius: 50%;  /* Rounded shape */
+  box-shadow: 0 0 20px 20px rgba(0,0,0,0.03);  /* Box shadow effect */
+  display: flex;  /* Display as a flex container */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
+  transform: translatex(-100%);  /* Initial position outside the viewport */
+  cursor: pointer;  /* Change cursor to pointer on hover */
+  transition: transform 0.4s ease-in-out 0.2s;  /* Transition effect for animation */
+}
+
+/* "X' to exit the menu */
+.sidebar__close::before,
+.sidebar__close::after {
+  
+  content: "";  /* Empty content */
+  height: 2px;  /* Height of the lines */
+  background: black;  /* Background color of the lines */
+  width: 24px;  /* Width of the lines */
+  display: block;  /* Display as a block element */
+  position: absolute;  /* Absolute positioning */
+}
+
+.sidebar__close::after {
+  transform: rotate(90deg);  /* Rotate the line 90 degrees */
+}
+
+.sidebar__menu {
+  display: flex;  /* Display as a flex container */
+  flex-direction: column;  /* Vertical stacking of menu items */
+  flex: 1;  /* Expand to fill the available space */
+  justify-content: space-around;  /* Spacing between menu items */
+  font-size: 36px;  /* Font size of the menu items */
+  margin-top: 80px;  /* Top margin of the menu */
+  margin-bottom: 80px;  /* Bottom margin of the menu */
+  color: #898989;  /* Text color of the menu items */
+}
+
+.sidebar__menu a {
+  font-family: mainFont;
+  color: black;  /* Inherit the color from the parent */
+  text-decoration: none;  /* Remove underline */
+  transform: translatex(-80%);  /* Initial position outside the viewport */
+  transition: transform 0.4s ease-in-out;  /* Transition effect for animation */
+}
+
+.sidebar__menu a::before {
+  content: "";  /* Empty content */
+  height: 2px;  /* Height of the line */
+  background: #898989;  /* Background color of the line */
+  width: 120px;  /* Width of the line */
+  position: absolute;  /* Absolute positioning */
+  bottom: -2px;  /* Distance from the bottom of the menu item */
+  left: 0;  /* Distance from the left side of the menu item */
+  transform: translatex(-50%);  /* Initial position outside the menu item */
+  opacity: 0;  /* Initially transparent */
+  transition: transform 0.4s ease-in-out, opacity 0.4s linear;  /* Transition effects for animation */
+}
+
+.sidebar__menu a:hover::before {
+  transform: translatex(0);  /* Move the line inside the menu item */
+  opacity: 1;  /* Make the line fully visible */
+}
+
+.sidebar__menu a:nth-child(1) {
+  transition-delay: 0.05s;  /* Delay the transition effect for the first menu item */
+}
+
+.sidebar__menu a:nth-child(2) {
+  transition-delay: 0.1s;  /* Delay the transition effect for the second menu item */
+}
+
+.sidebar__menu a:nth-child(3) {
+  transition-delay: 0.15s;  /* Delay the transition effect for the third menu item */
+}
+
+.sidebar__menu a:nth-child(4) {
+  transition-delay: 0.2s;  /* Delay the transition effect for the fourth menu item */
+}
+
+.sidebar__menu a:nth-child(5) {
+  transition-delay: 0.25s;  /* Delay the transition effect for the fifth menu item */
+}
+
+.sidebar__social {
+  display: flex;  /* Display as a flex container */
+  list-style: none;  /* Remove the default list styles */
+  padding: 0;  /* Remove padding */
+}
+
+.sidebar__social li {
+  margin: 4px;  /* Margin between social icons */
+}
+
+.sidebar__social a,
+.sidebar__social svg {
+  display: inline-block;  /* Display as an inline-block element */
+  height: 18px;  /* Height of the social icons */
+  width: 18px;  /* Width of the social icons */
+}
+
+.menu-control {
+  display: none;  /* Hide the menu control */
+}
+
+.menu-control:checked + .sidebar {
+  transform: translatex(0);  /* Move the sidebar into the viewport when the menu control is checked */
+}
+
+.menu-control:checked + .sidebar .sidebar__close {
+  transform: translatex(0) rotate(45deg);  /* Rotate the close button when the menu control is checked */
+}
+
+.menu-control:checked + .sidebar .sidebar__menu a {
+  transform: translatex(0);  /* Move the menu items into the viewport when the menu control is checked */
+}
+
+
+
+/* CSS for the container */
+.container {
+  
+  border: 0;
+  padding: 0;
+  margin: 0%;
+
+}
+
+/* CSS for h1 */
+h1 {
+  font-family: bubbleSans;
+    color: white;
+    font-size: 9vw;
+    padding: 1vw;
+  }
+
+
+  /* CSS for title-menu */
+.title-menu{
+  color: black;
+  text-align: center;
+}
+
+/* CSS for h2 */
+h2{
+ font-family: bubbleSans; 
+
+}
+
+/* CSS for h3 */
+h3 {
+  font-family: mainFont;
+    color: white;
+    font-size: 1.4rem;
+    padding: 1vw;
+    padding-left: 3vw;
+    padding-right: 7vw;
+    margin: auto;
+    text-align:  left;
+    line-height: 1.8rem;
+    word-spacing: 0.3rem;
+    
+
+}
+
+/* CSS for h4 */
+h4 {
+  font-family: mainFont;
+    color: white;
+    font-size: 1.4rem;
+    padding-top:7.5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 3vw;
+    margin: auto;
+    text-align: center;
+    word-spacing: 0.3rem;
+
+}
+
+/* CSS for h5 */
+h5{
+  font-family: mainFont;
+    font-size: 1.2rem;
+    
+
+}
+
+/* CSS for p */
+p {
+  font-family: mainFont;
+    color: black;
+    font-size: 1.2rem;
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 4vw;
+    margin: auto;
+    text-align: left;
+
+}
+
+/* CSS for list */
+.d-flex.my-table ul {
+  font-family: mainFont;
+  color: black;
+  font-size: 1.2rem;
+  padding-top: 1vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 4vw;
+  margin: auto;
+  text-align: left;
+}
+
+/* CSS for text about illustration */
+.title-comic-text{
+    padding-top: 4vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 1vw;
+    margin: 0;
+    text-align: left;
+    
+
+}
+
+.main-text{
+  display: flex;
+}
+
+/* CSS for First title */
+#welcome {
+  align-self: flex-start; /* Align at the top */
+  padding-left: 2vw;
+}
+
+#to {
+  align-self: center; /* Align in the middle */
+  padding-left: 2vw
+}
+
+#my {
+  align-self: center; /* Align in the middle */
+  padding-left: 5vw
+}
+#world {
+  align-self: flex-end; /* Align at the bottom */
+  padding-left: 8vw;
+}
+
+/* CSS for images */
+.first-image{
+  width: 100%;
+  height: auto;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  max-width: 40vw; /* Relative width using viewport width */
+  height: auto; 
+}
+
+.second-image{
+  width: 100%;
+  height: 30vh;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  max-width: 60vw; /* Relative width using viewport width */ 
+}
+
+.third-image{
+  width: 60%;
+  height: auto;
+  margin-left: 6vw;
+  padding-top: 4vw;
+  
+}
+
+.fourth-image{
+  width: 100%;
+  height: 30vh;
+  border-radius: 40px;
+  max-width: 60vw; /* Relative width using viewport width */ 
+
+}
+
+.fifth-image{
+  width: 80%;
+  height: auto;
+  margin:auto;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  border-radius: 40px;
+  position: relative;
+
+
+}
+
+.seventh-image{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+  border-radius: 40px;
+  
+}
+
+.eight-image{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+  border-radius: 40px;
+  
+
+}
+/* CSS for third page container (long images about 3D) */
+.image-overlay {
+  position: absolute;
+  margin-top: 3vw;
+  margin-bottom: 1vw;
+  width: 100%;
+  padding: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  bottom: 0%;
+  z-index: 1;
+}
+
+.image-overlay-2 {
+  position: absolute;
+  margin-top: 3vw;
+  margin-bottom: 1vw;
+  width: 100%;
+  padding: 100px;
+  padding-right: 8vw;
+  padding-left: 8vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  bottom: 0%;
+  z-index: 1;
+}
+
+.image-overlay h5 {
+  color: black;
+  
+}
+
+.image-overlay h3 {
+  color: black;
+  
+}
+
+.image-overlay .white{
+  color: white;
+}
+
+.image-overlay-2 .white{
+  color: white;
+}
+
+/* CSS to give priority to flex style */
+.d-flex {
+  display: flex!important;
+  flex-wrap: wrap;
+}
+
+/* CSS for white rectangles */
+.main-square {
+  background-color: whitesmoke;
+  border-radius: 40px;
+
+}
+
+.second-square{
+  background-color: whitesmoke;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+
+}
+
+.third-square {
+  background-color: whitesmoke;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+
+.elements-square{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+  flex-direction: row;
+}
+
+
+/* CSS for footer elements */
+.footer{
+  margin-top: 8vw;
+  background-color: #4741F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.footer-text{
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.back-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.footer-logo{
+  width: 15%;
+  height: auto;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  display: flex;
+  
+}
+
+.col-md-6 a{
+  display: flex;
+  justify-content: center;
+}
+
+
+.about-me{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.my-table{
+  display: flex;
+  justify-content: center;
+}
+
+/* CSS for table style */
+
+table {
+  font-family: mainFont;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  margin-left: 2vw;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+.right-column-text{
+  padding-top: 4vw;
+}
+
+
+/* CSS for ABOUT ME PAGE */
+
+label {
+  font-family: mainFont;
+  color: black;
+}
+
+input::placeholder {
+  font-family: mainFont;
+  font-size: 14px;
+  color: #999999;
+}
+
+/* Target the placeholder of textarea element */
+textarea::placeholder {
+  font-family: mainFont;
+  font-size: 16px;
+  color: #999999;
+}
+
+
+.btn-primary {
+  font-family: mainFont;
+  color: black;
+  background-color: white;
+  margin-top: 10px;
+  border-color: black;
+  border-radius: 10px;
+}
+
+.btn-primary:hover{
+  background-color: #4741F2;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.my-form{
+  display: flex;
+  flex-direction: column;
+}
+/* CSS for CONTACT PAGE */
+* {box-sizing:border-box}
+
+/* styles.css */
+.no-scroll {
+  height: 100%;
+  margin: 0;
+  
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.save-later {
+  padding-top: 20px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+
+.comment-text {
+  background-color: white;
+  color: black;
+  margin-top: 10px;
+}
+
+
+.slide-image {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap
+  
+}
+
+/* .row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+} */
+
+.savedImages {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+  
+}

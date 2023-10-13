@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"       
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link href="../indexCSS.css" rel="stylesheet">
+    </head>
+<body>
+    <div>
+        <label for="menu-control" class="hamburger">
+          <i class="hamburger__icon"></i>
+          <i class="hamburger__icon"></i>
+          <i class="hamburger__icon"></i>
+        </label>
+        
+        <input type="checkbox" id="menu-control" class="menu-control">
+        
+        <aside class="sidebar">
+          
+            <nav class="sidebar__menu"> <!-- Sidebar menu -->
+                <h1 class="title-menu">ARIAS</h1> <!-- Title of the sidebar -->
+                <a href="../pages/index.html"> MAIN</a> <!-- Main link -->
+                <a href="../pages/aboutMe.html">ABOUT ME</a> <!-- About Me link -->
+                <a href="">ABOUT MY WORLD</a> <!-- About My World link -->
+                <a href="">ILLUSTRATIONS</a> <!-- Illustrations link -->
+                <a href="">3D WORK</a> <!-- 3D Work link -->
+                <a href="">2D WORK</a> <!-- 2D Work link -->
+                <a href="../pages/contactPage.html">CONTACT</a> <!-- Contact link -->
+              </nav>
+        
+          
+          <label for="menu-control" class="sidebar__close"></label>
+        </aside>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="d-flex about-me">
+              <h1>CONTACT ME</h1>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-1"></div> <!-- Empty column for margin on the left -->
+            <div class="col-md-10 main-square"> <!-- Main content column -->
+                <div class="container-fluid">
+                    <div class="row elements-square">
+                        <div class="col-md-10">
+                            <div class="d-flex my-form">
+                                <form> <!-- Form element -->
+                                    <div class="form-group"> <!-- Form group for the name field -->
+                                      <label for="name">NAME:</label> <!-- Label for the name input field -->
+                                      <input type="text" class="form-control" id="name" placeholder="Enter your name"> <!-- Name input field -->
+                                    </div>
+                                    <div class="form-group"> <!-- Form group for the email field -->
+                                      <label for="email">EMAIL:</label> <!-- Label for the email input field -->
+                                      <input type="email" class="form-control" id="email" placeholder="Enter your email"> <!-- Email input field -->
+                                    </div>
+                                    <div class="form-group"> <!-- Form group for the message field -->
+                                      <label for="message">MESSAGE:</label> <!-- Label for the message textarea -->
+                                      <textarea class="form-control" id="message" rows="15" placeholder="Enter your message"></textarea> <!-- Message textarea -->
+                                    </div>
+                                    <div class="form-group"> <!-- Form group for the purpose field -->
+                                      <label for="purpose">PURPOSE:</label> <!-- Label for the purpose radio buttons -->
+                                      <div class="form-check"> <!-- Form check for motion graphics -->
+                                        <input type="radio" class="form-check-input" id="motionGraphics" name="purpose" value="Motion Graphics"> <!-- Motion graphics radio button -->
+                                        <label class="form-check-label block-text" for="motionGraphics">Motion Graphics</label> <!-- Label for motion graphics radio button -->
+                                      </div>
+                                      <div class="form-check"> <!-- Form check for illustration -->
+                                        <input type="radio" class="form-check-input" id="illustration" name="purpose" value="Illustration"> <!-- Illustration radio button -->
+                                        <label class="form-check-label block-text" for="illustration">Illustration</label> <!-- Label for illustration radio button -->
+                                      </div>
+                                      <div class="form-check"> <!-- Form check for animation -->
+                                        <input type="radio" class="form-check-input" id="animation" name="purpose" value="Animation"> <!-- Animation radio button -->
+                                        <label class="form-check-label block-text" for="animation">Animation</label> <!-- Label for animation radio button -->
+                                      </div>
+                                      <div class="form-check"> <!-- Form check for web design -->
+                                        <input type="radio" class="form-check-input" id="webDesign" name="purpose" value="Web Design"> <!-- Web design radio button -->
+                                        <label class="form-check-label block-text" for="webDesign">Web Design</label> <!-- Label for web design radio button -->
+                                      </div>
+                                      <div class="form-check"> <!-- Form check for other -->
+                                        <input type="radio" class="form-check-input" id="other" name="purpose" value="Other"> <!-- Other radio button -->
+                                        <label class="form-check-label block-text" for="other">Other</label> <!-- Label for other radio button -->
+                                      </div>
+                                    </div>
+                                    <div class="form-check"> <!-- Form check for the newsletter subscription -->
+                                      <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter"> <!-- Newsletter checkbox -->
+                                      <label class="form-check-label" for="newsletter">Subscribe to newsletter</label> <!-- Label for the newsletter checkbox -->
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button> <!-- Submit button -->
+                                  </form>
+                                  
+                            
+                                    
+                            </div>
+                        </div>
+                    </div>
+          
+                
+                </div>
+            </div>
+            <div class="col-md-1"></div> <!-- Empty column for margin on the right -->     
+        </div>
+    </div>
+   
+    <footer>
+        <div class="container-fluid footer">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="d-flex">
+                <p class="footer-text">2023. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-md-6">
+              <div class="d-flex back-top">
+                <a href="#top">
+                  <p class="footer-text">BACK TO TOP</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex">
+                <a href="https://www.instagram.com/jmanarias/" target="_blank">
+                  <img class="footer-logo" src="../img/instagram.png" alt="Logo">
+                </a>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </footer>
+</body>
+</html>
